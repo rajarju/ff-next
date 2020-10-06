@@ -4,26 +4,36 @@
   "private": true,
   "dependencies": {
     "@adobe/aio-sdk": "^2.3.0",
-    "node-fetch": "^2.6.0",
+    "@adobe/exc-app": "^0.2.17",
+    "@adobe/react-spectrum": "^3.3.0",
+    "@mdx-js/loader": "^1.6.18",
+    "@next/mdx": "^9.5.3",
+    "@zeit/next-css": "^1.0.1",
     "core-js": "^3.6.4",
+    "next": "^9.5.3",
+    "next-compose-plugins": "^2.2.0",
+    "next-transpile-modules": "^4.1.0",
+    "node-fetch": "^2.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
     "react-error-boundary": "^1.2.5",
-    "regenerator-runtime": "^0.13.5",
-    "@adobe/exc-app": "^0.2.17",
-    "@adobe/react-spectrum": "^3.3.0"
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.5"
   },
   "devDependencies": {
-    "jest": "^24.9.0",
-    "@openwhisk/wskdebug": "^1.3.0",
     "@babel/core": "^7.8.7",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
     "@babel/polyfill": "^7.8.7",
-    "@babel/preset-env": "^7.8.7"
+    "@babel/preset-env": "^7.8.7",
+    "@openwhisk/wskdebug": "^1.3.0",
+    "jest": "^24.9.0"
   },
   "scripts": {
     "test": "jest --passWithNoTests ./test",
-    "e2e": "jest --collectCoverage=false --testRegex ./e2e"
+    "e2e": "jest --collectCoverage=false --testRegex ./e2e",
+    "dev": "next dev ./web-src/src",
+    "build": "next build ./web-src/src",
+    "start": "next start ./web-src/src"
   },
   "engines": {
     "node": "^10 || ^12"

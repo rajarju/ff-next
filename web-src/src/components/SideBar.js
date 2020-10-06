@@ -3,19 +3,25 @@
 */
 
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import Link from 'next/link'
 
-function SideBar () {
+function SideBar() {
   return (
     <ul className="SideNav">
       <li className="SideNav-item">
-        <NavLink className="SideNav-itemLink" activeClassName="is-selected" aria-current="page" exact to="/">Home</NavLink>
+        <Link className="SideNav-itemLink" activeClassName="is-selected" aria-current="page" exact href="/">
+          <a className="SideNav-itemLink">Home</a>
+        </Link>
       </li>
       <li className="SideNav-item">
-        <NavLink className="SideNav-itemLink" activeClassName="is-selected" aria-current="page" to="/actions">Your App Actions</NavLink>
+        <Link className="SideNav-itemLink" activeClassName="is-selected" aria-current="page" href="/about">
+          <a className="SideNav-itemLink">About Project Firefly Apps</a>
+        </Link>
       </li>
       <li className="SideNav-item">
-        <NavLink className="SideNav-itemLink" activeClassName="is-selected" aria-current="page" to="/about">About Project Firefly Apps</NavLink>
+        <Link className="SideNav-itemLink" activeClassName="is-selected" aria-current="page" href="/about-mdx">
+          <a className="SideNav-itemLink">About MDX</a>
+        </Link>
       </li>
     </ul>
   )

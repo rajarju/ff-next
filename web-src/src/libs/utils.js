@@ -2,7 +2,7 @@
 * <license header>
 */
 
-import actions from './config.json'
+import actions from '../config.json'
 
 /* global fetch */
 

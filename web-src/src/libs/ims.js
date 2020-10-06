@@ -2,16 +2,8 @@
 * <license header>
 */
 
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
-
-import React from 'react'
-import ReactDOM from 'react-dom'
-
 import Runtime, { init } from '@adobe/exc-app'
 
-import App from './components/App'
-import './index.css'
 /* Here you can bootstrap your application and configure the integration with the Adobe Experience Cloud Shell */
 try {
   // attempt to load the Experience Cloud Runtime
@@ -29,11 +21,8 @@ function bootstrapRaw () {
   const mockRuntime = { on: () => {} }
   const mockIms = {}
 
-  // render the actual react application and pass along the runtime object to make it available to the App
-  ReactDOM.render(
-    <App runtime={mockRuntime} ims={mockIms} />,
-    document.getElementById('root')
-  )
+  window.runtime = mockRuntime
+  window.ims = mockIms
 }
 
 function bootstrapInExcShell () {
@@ -59,11 +48,7 @@ function bootstrapInExcShell () {
       org: imsOrg,
       token: imsToken
     }
-    // render the actual react application and pass along the runtime and ims objects to make it available to the App
-    ReactDOM.render(
-      <App runtime={runtime} ims={ims} />,
-      document.getElementById('root')
-    )
+    // render the actual react application and pass along the runtime and ims objects to make it available to the App   
   })
 
   // set solution info, shortTitle is used when window is too small to display full title
@@ -73,4 +58,7 @@ function bootstrapInExcShell () {
     shortTitle: 'JGR'
   }
   runtime.title = 'cnadev'
+
+  window.runtime = runtime
+  window.ims = ims
 }
